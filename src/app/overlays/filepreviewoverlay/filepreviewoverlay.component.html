@@ -1,0 +1,31 @@
+<div class="overlay-content">
+
+    <div *ngIf="!isLoading" class="d-flex flex-column align-items-center justify-content-between p-5">
+        <h2>Hi, {{data.fname}} {{data.lname}}</h2>
+
+        <form #overlayForm="ngForm" (ngSubmit)="overlayForm.valid && oSubmit()" novalidate>
+
+            <div class="mb-3">
+                <label class="form-label">Please enter your Place</label>
+                <input type="text" class="form-control" name="userPlace" #userPlace="ngModel" [(ngModel)]="place"
+                    required>
+                <label class="text-danger" for="place"
+                    *ngIf="(overlayForm?.submitted || userPlace?.touched) && userPlace?.errors?.['required']">
+                    Place is required</label>
+            </div>
+
+            <div class="mb-3 d-flex justify-content-center align-items-center">
+                <button type="submit" class="btn btn-primary mx-4">Submit</button>
+                <button type="button" class="btn btn-danger mx-4" (click)="closeOverlay()">Cancel</button>
+            </div>
+
+        </form>
+
+
+        <!-- <button type="button" class="btn btn-danger" (click)="closeOverlay()">Close</button> -->
+    </div>
+
+    <div *ngIf="isLoading" class="spinner-wrapper">
+        <mat-spinner></mat-spinner>
+    </div>
+</div>

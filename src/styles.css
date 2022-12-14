@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+/* .backdropBg {
+    background: rgb(255, 4, 122);
+    background: linear-gradient(315deg, rgba(255, 4, 122, 1) 0%, rgba(2, 117, 216, 1) 100%);
+} */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.dark-backdrop {
+    background: #000 !important;
+    opacity: 0.85 !important;
+}
+
+/* html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+} */

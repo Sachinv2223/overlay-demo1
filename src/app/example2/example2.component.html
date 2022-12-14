@@ -1,0 +1,33 @@
+<div class="d-flex flex-column align-items-center my-5">
+    <!-- <button (click)="showOverlay()" type="button" class="btn btn-primary">
+        Open
+    </button> -->
+
+    <form #form="ngForm" (ngSubmit)="form.valid && onsubmit()" novalidate>
+
+        <div class="mb-3">
+            <label class="form-label">First Name:</label>
+            <input type="text" class="form-control" name="fname" #fname="ngModel" [(ngModel)]="userName.fname" required>
+            <label class="text-danger" for="fname"
+                *ngIf="(form?.submitted || fname?.touched) && fname?.errors?.['required']">
+                Firstname is required</label>
+        </div>
+        <div class="mb-3">
+            <label for="lname" class="form-label">Last Name:</label>
+            <input type="text" class="form-control" name="lname" #lname="ngModel" [(ngModel)]="userName.lname"
+                required="true">
+            <label class="text-danger" for="lname"
+                *ngIf="(form?.submitted || lname?.touched) && lname?.errors?.['required']">
+                Lastname is required</label>
+        </div>
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+
+    <div *ngIf="place">
+        <h3>You are from {{ place }}</h3>
+    </div>
+
+</div>
