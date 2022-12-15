@@ -3,6 +3,7 @@ import { FilepreviewoverlayRef } from './filepreviewoverlay.ref';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { FILE_PREVIEW_DIALOG_DATA } from 'src/app/services/filepreviewoverlay.service';
 import { UserName } from 'src/app/interfaces/UserName.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filepreviewoverlay',
@@ -13,7 +14,8 @@ export class FilepreviewoverlayComponent implements OnInit {
 
   constructor(
     public dialogRef: FilepreviewoverlayRef,
-    @Inject(FILE_PREVIEW_DIALOG_DATA) public data: UserName
+    @Inject(FILE_PREVIEW_DIALOG_DATA) public data: UserName,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -34,7 +36,8 @@ export class FilepreviewoverlayComponent implements OnInit {
 
   oSubmit() {
     console.log(this.place);
-    this.dialogRef.shareData(this.place); 
+    this.dialogRef.shareDataAndClose(this.place);
+    this.router.navigate(['/home']);
   }
 
   closeOverlay() {

@@ -11,6 +11,7 @@ import { FilepreviewoverlayComponent } from './overlays/filepreviewoverlay/filep
 import { TaskoverlayComponent } from './overlays/taskoverlay/taskoverlay.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   entryComponents: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     Example1Component,
     Example2Component,
     FilepreviewoverlayComponent,
-    TaskoverlayComponent
+    TaskoverlayComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+<div class="wrapper container-fluid d-flex justify-content-center align-items-center">
+    <div class="text-center">
+        <h1 class="text-primary fs-1 fw-semibold">Welcome...... :)</h1>
+        <!-- <h1 *ngIf="place">You are from {{ place }}</h1> -->
+        <h1 *ngIf="place$ | async">You are from {{ place$ | async }}</h1>
+    </div>
+
+</div>
